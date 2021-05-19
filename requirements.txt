@@ -1,6 +1,7 @@
-dateparser==1.0.0
-discord_notify==1.0.0
-playsound==1.2.2
-psutil==5.8.0
-python_pushover==0.4
-PyYAML==5.4.1
+dateparser
+discord_notify
+playsound
+psutil
+python_pushover
+PyYAML
+pyinstaller

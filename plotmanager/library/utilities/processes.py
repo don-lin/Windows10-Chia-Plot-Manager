@@ -27,12 +27,10 @@ def get_manager_processes():
     processes = []
     for process in psutil.process_iter():
         try:
-            if not re.search(r'^pythonw?(?:\d+\.\d+|\d+)?(?:\.exe)?$', process.name(), flags=re.I):
-                continue
-            if not _contains_in_list('python', process.cmdline(), case_insensitive=True) or \
-                    not _contains_in_list('stateless-manager.py', process.cmdline()):
-                continue
-            processes.append(process)
+            if(process.name()=='stateless-manager.exe'):
+                processes.append(process)
+            if(process.name()=='chia.exe'):
+                processes.append(process)
         except psutil.NoSuchProcess:
             pass
     return processes

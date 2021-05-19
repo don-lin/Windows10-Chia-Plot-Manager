@@ -21,30 +21,22 @@ def start_manager():
         raise ManagerError('Manager is already running.')
 
     directory = pathlib.Path().resolve()
-    stateless_manager_path = os.path.join(directory, 'stateless-manager.py')
+    stateless_manager_path = os.path.join(directory, 'stateless-manager.exe')
     if not os.path.exists(stateless_manager_path):
         raise FileNotFoundError('Failed to find stateless-manager.')
     manager_log_file_path = os.path.join(directory, 'manager.log')
     manager_log_file = open(manager_log_file_path, 'a')
-    python_file_path = sys.executable
 
     chia_location, log_directory, jobs, manager_check_interval, max_concurrent, progress_settings, \
         notification_settings, debug_level, view_settings = get_config_info()
 
     extra_args = []
-    if is_windows():
-        pythonw_file_path = '\\'.join(python_file_path.split('\\')[:-1] + ['pythonw.exe'])
-    else:
-        pythonw_file_path = '\\'.join(python_file_path.split('\\')[:-1] + ['python &'])
-        extra_args.append('&')
-    if os.path.exists(pythonw_file_path):
-        python_file_path = pythonw_file_path
 
-    args = [python_file_path, stateless_manager_path] + extra_args
+    args = [stateless_manager_path] + extra_args
     start_process(args=args, log_file=manager_log_file)
-    time.sleep(3)
+    time.sleep(1)
     if not get_manager_processes():
-        raise ManagerError('Failed to start Manager. Please look at manager.log for more details on the error. It is in the same folder as manager.py.')
+        print('warning: chia plotter not found')
 
     send_notifications(
         title='Plot manager started',
@@ -60,12 +52,13 @@ def stop_manager():
         print("No manager processes were found.")
         return
     for process in processes:
+        print('terminating',process.name())
         try:
             process.terminate()
         except psutil.NoSuchProcess:
             pass
-    if get_manager_processes():
-        raise TerminationException("Failed to stop manager processes.")
+    # if get_manager_processes():
+    #     raise TerminationException("Failed to stop manager processes.")
     print("Successfully stopped manager processes.")
 
 
