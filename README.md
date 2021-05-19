@@ -6,8 +6,18 @@
 
 #### You can run this plotter in a brand new computer with just one command
 
-![start and stop the manager](https://github.com/don-lin/Windows10-Chia-Plot-Manager/blob/main/screenshot/start_stop.png?raw=true)
+run the manager:
+`manager.exe start`
 
+view the status:
+`manager.exe view`
+
+stop every chia plotter:
+`manager.exe stop`
+
+
+![start and stop the manager](https://github.com/don-lin/Windows10-Chia-Plot-Manager/blob/main/screenshot/start_stop.png?raw=true)
+![view the manager](https://github.com/don-lin/Windows10-Chia-Plot-Manager/blob/main/screenshot/view.png?raw=true)
 
 
 ##### Development Version: v0.0.1
