@@ -3,7 +3,12 @@
 #### A plot manager for Chia plotting: https://www.chia.net/
 [English](README.md)
 
-![The view of the manager](https://i.imgur.com/SmMDD0Q.png "View")
+
+#### You can run this plotter in a brand new computer with just one command
+
+![start and stop the manager](https://github.com/don-lin/Windows10-Chia-Plot-Manager/tree/main/screenshot/start_stop.png?raw=true "start and stop the manager")
+
+
 
 ##### Development Version: v0.0.1
 
@@ -60,14 +65,6 @@ The installation of this library is straightforward. I have attached detailed in
 The configuration of this library is unique to every end-user. The `config.yaml` file is where the configuration will live. 
 
 This plot manager works based on the idea of jobs. Each job will have its own settings that you can configure and customize. No two drives are unique so this will provide flexibility for your own constraints and requirements.
-
-### chia_location
-
-This is a single variable that should contain the location of your chia executable file. This is the blockchain executable.
-
-* Windows Example: `C:\Users\<USERNAME>\AppData\Local\chia-blockchain\app-1.1.2\resources\app.asar.unpacked\daemon\chia.exe`
-* Linux Example: `/usr/lib/chia-blockchain/resources/app.asar.unpacked/daemon/chia`
-* Another Linux Example: `/home/swar/chia-blockchain/venv/bin/chia`
 
 ### manager
 
