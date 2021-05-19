@@ -6,7 +6,7 @@
 
 #### You can run this plotter in a brand new computer with just one command
 
-![start and stop the manager](https://github.com/don-lin/Windows10-Chia-Plot-Manager/tree/main/screenshot/start_stop.png?raw=true "start and stop the manager")
+![start and stop the manager](https://github.com/don-lin/Windows10-Chia-Plot-Manager/blob/main/screenshot/start_stop.png?raw=true)
 
 
 
